@@ -18,6 +18,10 @@ OR
 The purpose of this repo is to be able to use the code to assess how much training set data would be needed for future natural speech stimuli experiment. 
 In order for the code to work, please ensure that you have an .h5 file which has the contents stored in this format: 
 
+project/
+└── subject
+    └── session
+        └── datatype 
 natrualspeech.hf5
 ├── dataset_description.json
 ├── participants.tsv
