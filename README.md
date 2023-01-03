@@ -18,36 +18,39 @@ OR
 The purpose of this repo is to be able to use the code to assess how much training set data would be needed for future natural speech stimuli experiment. 
 In order for the code to work, please ensure that you have an .h5 file which has the contents stored in this format: 
 
-naturalspeech.hf5
-├── stimulus type (e.g. MovieTrailers)
-│   ├── wav_file_name_1 
-│   │   ├── resp
-│	│	│	└── subject_ID
-│	│	│		└── epochs
-│   │   └── stim
-│	│		├── envelope
-│	│		├── pitch
-│	│		├── phonological features
-│   └── wav_file_name_2
-│       ├── resp
-│		└── stim	
-│		
-│			
-├── stimulus type (e.g. TIMIT)
-│   ├── wav_file_name_1 
-│   │   ├── resp
-│	│	│	└── subject_ID
-│	│	│		└── epochs
-│   │   └── stim
-│	│		├── envelope
-│	│		├── pitch
-│	│		├── phonological features
-│   └── wav_file_name_2
-│       ├── resp
-│		└── stim
+natrualspeech.hf5
+├── dataset_description.json
+├── participants.tsv
+├── stimulus-type (e.g. MovieTrailers)
+│   ├── wav_file_name
+│   │   ├── resp
+│   │   │    ├── subject_ID
+│   │   │              └── epochs
+│   │   └── stim
+│   │         ├── pitch
+│   │         ├── envelope
+│   │         └── phonological-features
+│   └── func
+│       ├── sub-01_task-balloonanalogrisktask_run-01_bold.nii.gz
+│       ├── sub-01_task-balloonanalogrisktask_run-01_events.tsv
+│       ├── sub-01_task-balloonanalogrisktask_run-02_bold.nii.gz
+│       ├── sub-01_task-balloonanalogrisktask_run-02_events.tsv
+│       ├── sub-01_task-balloonanalogrisktask_run-03_bold.nii.gz
+│       └── sub-01_task-balloonanalogrisktask_run-03_events.tsv
+├── stimulus-type (e.g. TIMIT)
+│   ├── anat
+│   │   ├── sub-02_inplaneT2.nii.gz
+│   │   └── sub-02_T1w.nii.gz
+│   └── func
+│       ├── sub-02_task-balloonanalogrisktask_run-01_bold.nii.gz
+│       ├── sub-02_task-balloonanalogrisktask_run-01_events.tsv
+│       ├── sub-02_task-balloonanalogrisktask_run-02_bold.nii.gz
+│       ├── sub-02_task-balloonanalogrisktask_run-02_events.tsv
+│       ├── sub-02_task-balloonanalogrisktask_run-03_bold.nii.gz
+│       └── sub-02_task-balloonanalogrisktask_run-03_events.tsv
 ...
 ...
-└── 
+└── task-balloonanalogrisktask_bold.json
 
 ### Code to run (it's only one notebook! Well...technically two notebooks. One notebook runs r-code)
 1)  `main-runScripts.ipynb` : change path, subject, stimulus class, model type (feature representation)
